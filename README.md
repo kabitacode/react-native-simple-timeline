@@ -78,10 +78,13 @@ const data = [
 | <b>direction</b>  | String| choose "vertical" or horizontal. | vertical |
 | <b>customStyle</b> | Object| Custom Style for the Timeline | `null` |
 
-## Custom Style Props
+## See The Props
 
 ```js
 
+ type Props = {
+  data: Array<{ id: number, status: string, date: string }>,
+  direction?: 'horizontal' | 'vertical',
   customStyle?: {
     container?: object,
     leftColumn?: object,
@@ -99,6 +102,7 @@ const data = [
       txtStatus?: object,
       txtDate?: object
     }
+  }
 }
 ```
 <br/>
