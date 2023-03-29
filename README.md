@@ -69,6 +69,39 @@ const data = [
 
 
 ```
+<br/>
+
+## Properties
+| Prop              | Type  | Description | Default |
+|---|---|---|---|
+| <b>data</b>       | Array | array of object for data. | `null` |
+| <b>direction</b>  | String| choose "vertical" or horizontal. | vertical |
+| <b>customStyle</b> | Object| Custom Style for the Timeline | `null` |
+
+## Custom Style Props
+
+```js
+
+  customStyle?: {
+    container?: object,
+    leftColumn?: object,
+    rightColumn?: object,
+    dotContainer?: object,
+    dot?: object,
+    connector?: object,
+    dotConnectorHorizontalWrapper?: object,
+    containerHorizontal?: object,
+    dotContainerHorizontal?: object,
+    dotHorizontal?: object,
+    connectorHorizontal?: object,
+    containerHorizontalText?: object,
+    textStyle?: {
+      txtStatus?: object,
+      txtDate?: object
+    }
+}
+```
+<br/>
 
 ## Contributing
 
