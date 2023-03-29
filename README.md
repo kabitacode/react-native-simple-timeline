@@ -2,6 +2,12 @@
 
 React Native Timeline
 
+
+
+https://user-images.githubusercontent.com/30437682/228461243-f8c9d3b2-e8b3-427c-9964-4472ed665d69.mp4
+
+
+
 ## Installation
 
 ```sh
