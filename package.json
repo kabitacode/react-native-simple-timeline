@@ -1,15 +1,18 @@
 {
   "name": "react-native-simple-timeline",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "test",
-  "main": "lib/commonjs/index",
-  "module": "lib/module/index",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "react-native": "src/index.tsx",
   "types": "lib/typescript/index.d.ts",
-  "react-native": "src/index",
   "source": "src/index",
   "files": [
     "src",
     "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
     "android",
     "ios",
     "cpp",
@@ -21,9 +24,6 @@
     "!android/gradlew",
     "!android/gradlew.bat",
     "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
     "!**/.*"
   ],
   "scripts": {
@@ -33,14 +33,23 @@
     "prepack": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn install"
+    "pods": "cd example && pod-install --quiet",
+    "bootstrap": "yarn example && yarn && yarn pods"
   },
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "expo",
+    "react-native-timeline-flatlist",
+    "react-native-timeline",
+    "react native timeline",
+    "flatlist"
   ],
-  "repository": "https://github.com/kabitacode/react-native-simple-timeline",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kabitacode/react-native-simple-timeline.git"
+  },
   "author": "Muhamad Zulfiqor <30437682+kabitacode@users.noreply.github.com> (https://github.com/kabitacode)",
   "license": "MIT",
   "bugs": {
@@ -51,24 +60,21 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "^1.2.2",
     "@commitlint/config-conventional": "^17.0.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
+    "@types/babel__core": "^7.20.0",
     "@types/jest": "^28.1.2",
     "@types/react": "~17.0.21",
     "@types/react-native": "0.70.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
     "eslint": "^8.4.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.1.1",
     "pod-install": "^0.1.0",
-    "prettier": "^2.0.5",
     "react": "18.2.0",
     "react-native": "0.71.4",
-    "react-native-builder-bob": "^0.20.0",
+    "react-native-builder-bob": "^0.20.4",
     "release-it": "^15.0.0",
     "typescript": "^4.5.2"
   },
@@ -115,45 +121,29 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@react-native-community",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
-    }
+      "@react-native-community"
+    ]
   },
   "eslintIgnore": [
     "node_modules/",
     "lib/"
   ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
     "targets": [
-      "commonjs",
-      "module",
       [
-        "typescript",
+        "commonjs",
         {
-          "project": "tsconfig.build.json"
+          "copyFlow": true
         }
-      ]
+      ],
+      "module",
+      "typescript"
     ]
+  },
+  "directories": {
+    "example": "example",
+    "lib": "lib"
   }
 }
