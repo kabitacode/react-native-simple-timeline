@@ -1,6 +1,6 @@
 /**
  * Simple React Native Timeline
- * https://github.com/facebook/react-native
+ * https://github.com/kabitacode/react-native-simple-timeline
  *
  * @format
  */
