@@ -12,8 +12,7 @@ https://user-images.githubusercontent.com/30437682/228461243-f8c9d3b2-e8b3-427c-
 
 ```sh
 npm install react-native-simple-timeline
-or 
-yarn add react-native-simple-timeline
+npm install --save-dev @types/react-native-simple-timeline
 ```
 
 ## Usage
